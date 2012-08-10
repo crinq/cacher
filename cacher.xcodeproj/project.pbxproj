@@ -1,0 +1,270 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		87E8BA0915D5D74300BC096A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8BA0815D5D74300BC096A /* UIKit.framework */; };
+		87E8BA0B15D5D74300BC096A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8BA0A15D5D74300BC096A /* Foundation.framework */; };
+		87E8BA0D15D5D74300BC096A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87E8BA0C15D5D74300BC096A /* CoreGraphics.framework */; };
+		87E8BA1315D5D74300BC096A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 87E8BA1115D5D74300BC096A /* InfoPlist.strings */; };
+		87E8BA1515D5D74300BC096A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E8BA1415D5D74300BC096A /* main.m */; };
+		87E8BA1915D5D74300BC096A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 87E8BA1815D5D74300BC096A /* AppDelegate.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		87E8BA0415D5D74300BC096A /* cacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = cacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		87E8BA0815D5D74300BC096A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		87E8BA0A15D5D74300BC096A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		87E8BA0C15D5D74300BC096A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		87E8BA1015D5D74300BC096A /* cacher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cacher-Info.plist"; sourceTree = "<group>"; };
+		87E8BA1215D5D74300BC096A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		87E8BA1415D5D74300BC096A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		87E8BA1615D5D74300BC096A /* cacher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "cacher-Prefix.pch"; sourceTree = "<group>"; };
+		87E8BA1715D5D74300BC096A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		87E8BA1815D5D74300BC096A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		87E8BA0115D5D74300BC096A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87E8BA0915D5D74300BC096A /* UIKit.framework in Frameworks */,
+				87E8BA0B15D5D74300BC096A /* Foundation.framework in Frameworks */,
+				87E8BA0D15D5D74300BC096A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		87E8B9F915D5D74300BC096A = {
+			isa = PBXGroup;
+			children = (
+				87E8BA0E15D5D74300BC096A /* cacher */,
+				87E8BA0715D5D74300BC096A /* Frameworks */,
+				87E8BA0515D5D74300BC096A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		87E8BA0515D5D74300BC096A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				87E8BA0415D5D74300BC096A /* cacher.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		87E8BA0715D5D74300BC096A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				87E8BA0815D5D74300BC096A /* UIKit.framework */,
+				87E8BA0A15D5D74300BC096A /* Foundation.framework */,
+				87E8BA0C15D5D74300BC096A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87E8BA0E15D5D74300BC096A /* cacher */ = {
+			isa = PBXGroup;
+			children = (
+				87E8BA1715D5D74300BC096A /* AppDelegate.h */,
+				87E8BA1815D5D74300BC096A /* AppDelegate.m */,
+				87E8BA0F15D5D74300BC096A /* Supporting Files */,
+			);
+			path = cacher;
+			sourceTree = "<group>";
+		};
+		87E8BA0F15D5D74300BC096A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				87E8BA1015D5D74300BC096A /* cacher-Info.plist */,
+				87E8BA1115D5D74300BC096A /* InfoPlist.strings */,
+				87E8BA1415D5D74300BC096A /* main.m */,
+				87E8BA1615D5D74300BC096A /* cacher-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		87E8BA0315D5D74300BC096A /* cacher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87E8BA1C15D5D74300BC096A /* Build configuration list for PBXNativeTarget "cacher" */;
+			buildPhases = (
+				87E8BA0015D5D74300BC096A /* Sources */,
+				87E8BA0115D5D74300BC096A /* Frameworks */,
+				87E8BA0215D5D74300BC096A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = cacher;
+			productName = cacher;
+			productReference = 87E8BA0415D5D74300BC096A /* cacher.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		87E8B9FB15D5D74300BC096A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = crinq;
+			};
+			buildConfigurationList = 87E8B9FE15D5D74300BC096A /* Build configuration list for PBXProject "cacher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 87E8B9F915D5D74300BC096A;
+			productRefGroup = 87E8BA0515D5D74300BC096A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				87E8BA0315D5D74300BC096A /* cacher */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		87E8BA0215D5D74300BC096A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87E8BA1315D5D74300BC096A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		87E8BA0015D5D74300BC096A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87E8BA1515D5D74300BC096A /* main.m in Sources */,
+				87E8BA1915D5D74300BC096A /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		87E8BA1115D5D74300BC096A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				87E8BA1215D5D74300BC096A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		87E8BA1A15D5D74300BC096A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		87E8BA1B15D5D74300BC096A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		87E8BA1D15D5D74300BC096A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cacher/cacher-Prefix.pch";
+				INFOPLIST_FILE = "cacher/cacher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		87E8BA1E15D5D74300BC096A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "cacher/cacher-Prefix.pch";
+				INFOPLIST_FILE = "cacher/cacher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		87E8B9FE15D5D74300BC096A /* Build configuration list for PBXProject "cacher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87E8BA1A15D5D74300BC096A /* Debug */,
+				87E8BA1B15D5D74300BC096A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		87E8BA1C15D5D74300BC096A /* Build configuration list for PBXNativeTarget "cacher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87E8BA1D15D5D74300BC096A /* Debug */,
+				87E8BA1E15D5D74300BC096A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 87E8B9FB15D5D74300BC096A /* Project object */;
+}
