@@ -10,4 +10,5 @@
 
 @interface navViewController : UIViewController
 
+- (void)updateView;
 @end

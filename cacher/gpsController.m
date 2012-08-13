@@ -7,6 +7,7 @@
 //
 
 #import "gpsController.h"
+#import "AppDelegate.h"
 
 @implementation gpsController
 
@@ -16,6 +17,7 @@
 -(void) messageReceived:(NSString*) message
 {
     [self parse:message];
+    [[[AppDelegate sharedSingleton] rootNavController] updateView];
 }
 
 - (id)init{

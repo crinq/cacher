@@ -130,8 +130,13 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     
-    cacheDetailsViewController *cacheDetails = [[cacheDetailsViewController alloc] initWithGCCode:@"test"];
+    cacheDetails = [[cacheDetailsViewController alloc] initWithGCCode:@"test"];
     [[self navigationController] pushViewController:cacheDetails animated:YES];
+}
+
+- (void)updateView
+{
+    [cacheDetails updateView];
 }
 
 @end

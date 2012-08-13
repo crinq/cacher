@@ -11,5 +11,6 @@
 @interface cacheDetailsViewController : UIViewController
 
 - (id)initWithGCCode:(NSString *)GCCode;
+- (void)updateView;
 
 @end

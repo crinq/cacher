@@ -41,4 +41,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (void)updateView
+{
+
+}
+
 @end

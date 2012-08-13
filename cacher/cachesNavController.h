@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "cachesTableViewController.h"
 
-@interface cachesNavController : UINavigationController
+@interface cachesNavController : UINavigationController{
+    cachesTableViewController *myCachesTableView;
+}
 
+- (void)updateView;
 @end

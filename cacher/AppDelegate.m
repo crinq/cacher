@@ -10,13 +10,17 @@
 
 @implementation AppDelegate
 
+@synthesize rootControllerSwitch;
+@synthesize rootNavController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSLog(@"didFinishLaunchingWithOptions");
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-    rootNavigationController *myNavController = [[rootNavigationController alloc] init];
+    rootNavController = [[rootNavigationController alloc] init];
+    rootControllerSwitch = [[rootController alloc] init];
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = myNavController;
+    self.window.rootViewController = rootNavController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -51,6 +55,18 @@
 {
     NSLog(@"applicationWillTerminate");
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
++ (id)sharedSingleton
+{
+    static AppDelegate *sharedSingleton;
+    
+    @synchronized(self)
+    {
+        if (!sharedSingleton)
+            sharedSingleton = [[AppDelegate alloc] init];
+        return sharedSingleton;
+    }
 }
 
 @end

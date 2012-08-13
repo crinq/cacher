@@ -19,7 +19,7 @@
     self = [super init];
     if (self) {
         // Custom initialization
-        cachesTableViewController *myCachesTableView = [[cachesTableViewController alloc] init];
+        myCachesTableView = [[cachesTableViewController alloc] init];
         [self pushViewController:myCachesTableView animated:YES];
     }
     return self;
@@ -40,6 +40,11 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)updateView
+{
+    [myCachesTableView updateView];
 }
 
 @end

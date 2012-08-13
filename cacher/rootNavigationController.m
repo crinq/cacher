@@ -19,8 +19,8 @@
     self = [super init];
     if (self) {
         // Custom initialization
-        navViewController *myNavView = [[navViewController alloc] init];
-        cachesNavController *myCacheNavController = [[cachesNavController alloc] init];
+        myNavView = [[navViewController alloc] init];
+        myCacheNavController = [[cachesNavController alloc] init];
         [self addChildViewController:myCacheNavController];
         [self addChildViewController:myNavView];
     }
@@ -42,6 +42,12 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)updateView
+{
+    [myNavView updateView];
+    [myCacheNavController updateView];
 }
 
 @end
