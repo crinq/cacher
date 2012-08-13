@@ -10,6 +10,8 @@
 #import "navViewController.h"
 #import "cachesNavController.h"
 
+@class cachesNavController;
+
 @interface rootNavigationController : UITabBarController{
     navViewController *myNavView;
     cachesNavController *myCacheNavController;

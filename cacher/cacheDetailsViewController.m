@@ -16,6 +16,7 @@
 
 - (id)initWithGCCode:(NSString *)GCCode
 {
+
     self = [super init];
     if (self) {
         // Custom initialization

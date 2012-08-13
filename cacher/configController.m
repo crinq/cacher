@@ -14,6 +14,7 @@
 
 -(id)init{
     maxDistance = 1;
+    sortArray = YES;
     return self;
 }
 

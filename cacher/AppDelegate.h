@@ -10,6 +10,9 @@
 #import "rootNavigationController.h"
 #import "rootController.h"
 
+@class rootNavigationController;
+@class rootController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
     rootNavigationController *rootNavController;
     rootController *rootControllerSwitch;

@@ -26,6 +26,7 @@
 		8769B76415D5CD670039E2A0 /* libBTstack.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8769B76315D5CD670039E2A0 /* libBTstack.dylib */; };
 		87A49D3B15D87D3400EB8006 /* rootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A49D3A15D87D3400EB8006 /* rootController.m */; };
 		87A49D3F15D8846000EB8006 /* configController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A49D3E15D8846000EB8006 /* configController.m */; };
+		87A49D4215D89C1100EB8006 /* root.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A49D4115D89C1100EB8006 /* root.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,8 @@
 		87A49D3A15D87D3400EB8006 /* rootController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = rootController.m; sourceTree = "<group>"; };
 		87A49D3D15D8845F00EB8006 /* configController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = configController.h; sourceTree = "<group>"; };
 		87A49D3E15D8846000EB8006 /* configController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configController.m; sourceTree = "<group>"; };
+		87A49D4015D89C1000EB8006 /* root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = root.h; sourceTree = "<group>"; };
+		87A49D4115D89C1100EB8006 /* root.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = root.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 		8769B72915D58C7D0039E2A0 /* cacher */ = {
 			isa = PBXGroup;
 			children = (
+				87A49D4015D89C1000EB8006 /* root.h */,
+				87A49D4115D89C1100EB8006 /* root.m */,
 				8769B73215D58C7D0039E2A0 /* AppDelegate.h */,
 				8769B73315D58C7D0039E2A0 /* AppDelegate.m */,
 				8769B75515D5B4CC0039E2A0 /* ViewController */,
@@ -271,6 +276,7 @@
 				8769B76215D5CC890039E2A0 /* BluetoothService.m in Sources */,
 				87A49D3B15D87D3400EB8006 /* rootController.m in Sources */,
 				87A49D3F15D8846000EB8006 /* configController.m in Sources */,
+				87A49D4215D89C1100EB8006 /* root.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

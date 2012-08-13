@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "cache.h"
+#import "AppDelegate.h"
+#import "pos.h"
 
 @interface cacheController : NSObject{
     NSMutableArray *caches;

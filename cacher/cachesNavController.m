@@ -16,6 +16,7 @@
 
 - (id)init
 {
+
     self = [super init];
     if (self) {
         // Custom initialization
@@ -44,6 +45,7 @@
 
 - (void)updateView
 {
+    NSLog(@"update table nav");
     [myCachesTableView updateView];
 }
 

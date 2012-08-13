@@ -16,6 +16,7 @@
 
 - (id)init
 {
+
     self = [super init];
     if (self) {
         // Custom initialization
@@ -60,7 +61,9 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    //return [[[[AppDelegate sharedSingleton] rootControllerSwitch] caches] count];
+    return 1
+    ;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -136,6 +139,8 @@
 
 - (void)updateView
 {
+    NSLog(@"update table");
+    [self.tableView reloadData];
     [cacheDetails updateView];
 }
 

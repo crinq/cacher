@@ -18,6 +18,7 @@
 {
     [self parse:message];
     [[[AppDelegate sharedSingleton] rootNavController] updateView];
+    NSLog(@"msg");
 }
 
 - (id)init{
@@ -25,7 +26,8 @@
 	[bt addListener:self];
     [bt activate];
 
-    return self;
+    currentPos = [[pos alloc] initWithLongitudeInDeg:7.622567 andLatitudeInDeg:51.97215];
+    return self;;
 }
 
 - (void)parse:(NSString*)data{

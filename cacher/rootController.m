@@ -28,8 +28,13 @@
     return [myConfigController maxDistance];
 }
 
+- (bool)sortArray{
+    return [myConfigController sortArray];
+}
+
 - (pos *)currentPosition{
     return [myGpsController currentPos];
 }
+
 
 @end

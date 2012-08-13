@@ -13,12 +13,22 @@
 @synthesize rootControllerSwitch;
 @synthesize rootNavController;
 
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+        rootControllerSwitch = [[rootController alloc] init];
+        rootNavController = [[rootNavigationController alloc] init];
+    }
+    return self;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSLog(@"didFinishLaunchingWithOptions");
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-    rootNavController = [[rootNavigationController alloc] init];
-    rootControllerSwitch = [[rootController alloc] init];
+
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = rootNavController;
     [self.window makeKeyAndVisible];

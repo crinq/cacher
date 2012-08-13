@@ -12,6 +12,8 @@
 #import "configController.h"
 #import "pos.h"
 
+@class cacheController;
+
 @interface rootController : NSObject{
     gpsController *myGpsController;
     cacheController *myCacheController;
@@ -21,6 +23,7 @@
 
 - (NSMutableArray *)caches;
 - (NSUInteger)maxDistance;
+- (bool)sortArray;
 - (pos *)currentPosition;
 
 

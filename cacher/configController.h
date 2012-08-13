@@ -10,9 +10,10 @@
 
 @interface configController : NSObject{
     NSUInteger maxDistance;
-    
+    bool sortArray;
 }
 
 @property (readonly) NSUInteger maxDistance;
+@property (readonly) bool sortArray;
 
 @end
