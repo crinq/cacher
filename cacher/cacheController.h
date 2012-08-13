@@ -13,5 +13,7 @@
     NSMutableArray *caches;
 }
 
+@property (readonly) NSMutableArray *caches;
+
 
 @end

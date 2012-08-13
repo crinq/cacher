@@ -10,6 +10,8 @@
 
 @implementation cacheController
 
+@synthesize caches;
+
 - (cache*) getCacheByGCCode:(NSString*)GCCode{
     NSInteger index =  [caches indexOfObjectPassingTest:
         ^ (id obj, NSUInteger idx, BOOL *stop)
