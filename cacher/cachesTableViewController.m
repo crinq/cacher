@@ -62,8 +62,7 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     //return [[[[AppDelegate sharedSingleton] rootControllerSwitch] caches] count];
-    return 1
-    ;
+    return [[[[root get] rootControllerSwitch] caches] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,10 +73,19 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:nil];
     }
     // Configure the cell...
-    cell.textLabel.text = @"test";
-    cell.detailTextLabel.text = @"test detail";
-  
+    //cell.textLabel.text = @"test";
+    //cell.detailTextLabel.text = @"test detail";
+    pos *currentpos = [[[root get] rootControllerSwitch] currentPosition];
+    pos *cachepos = [[[[[root get] rootControllerSwitch] caches] objectAtIndex:indexPath.row] GCPos];
     
+    cell.textLabel.text = [[[[[root get] rootControllerSwitch] caches] objectAtIndex:indexPath.row] GCCode];
+    
+    if([cachepos distanceTo:currentpos] > 1000.0){
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fKm", [cachepos distanceTo:currentpos] / 1000];
+    }
+    else{
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fm", [cachepos distanceTo:currentpos]];
+    }
     
     return cell;
 }
@@ -133,13 +141,12 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     
-    cacheDetails = [[cacheDetailsViewController alloc] initWithGCCode:@"test"];
+    cacheDetails = [[cacheDetailsViewController alloc] initWithGCCode:[[[[[root get] rootControllerSwitch] caches] objectAtIndex:indexPath.row] GCCode]];
     [[self navigationController] pushViewController:cacheDetails animated:YES];
 }
 
 - (void)updateView
 {
-    NSLog(@"update table");
     [self.tableView reloadData];
     [cacheDetails updateView];
 }

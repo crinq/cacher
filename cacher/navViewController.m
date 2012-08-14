@@ -29,6 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    label = [[UILabel alloc] init];
+    [label setNumberOfLines:0];
+    self.view = label;
 }
 
 - (void)viewDidUnload
@@ -44,7 +47,28 @@
 
 - (void)updateView
 {
-
+    NSMutableString* content = [[NSMutableString alloc] init];
+    pos *currentpos = [[[root get] rootControllerSwitch] currentPosition];
+    cache *cache = [[[root get] rootControllerSwitch] currentCache];
+    
+    [content appendFormat:@"GCCode: %@\n", [cache GCCode]];
+    [content appendFormat:@"GCName: %@\n", [cache GCName]];
+    [content appendFormat:@"GCPos: %f\t%f\n", [[cache GCPos] latInDeg], [[cache GCPos] lonInDeg]];
+    [content appendFormat:@"myPos: %f\t%f\n", [currentpos latInDeg], [currentpos lonInDeg]];
+    
+    if([[cache GCPos] distanceTo:currentpos] > 1000.0){
+        [content appendFormat:@"Distance: %fKm\n", [[cache GCPos] distanceTo:currentpos] / 1000];
+    }
+    else{
+        [content appendFormat:@"Distance: %fm\n", [[cache GCPos] distanceTo:currentpos]];
+    }
+    
+    //[content appendFormat:@"Distance: %f\n", [[cache GCPos] distanceTo:currentpos]];
+    [content appendFormat:@"Direction: %f\n", [[cache GCPos] dirInDegTo:currentpos]];
+    [content appendFormat:@"GCInfo: %@\n", [cache GCInfo]];
+    
+    [label setText:content];
+    self.view = label;
 }
 
 @end

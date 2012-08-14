@@ -7,21 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "rootNavigationController.h"
-#import "rootController.h"
+#import "root.h"
+
 
 @class rootNavigationController;
 @class rootController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>{
-    rootNavigationController *rootNavController;
-    rootController *rootControllerSwitch;
+
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (readonly) rootNavigationController *rootNavController;
-@property (readonly) rootController *rootControllerSwitch;
 
-+ (id)sharedSingleton;
 
 @end

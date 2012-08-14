@@ -7,7 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "rootNavigationController.h"
+#import "rootController.h"
 
-@interface root : NSObject
+@class rootNavigationController;
+@class rootController;
 
+@interface root : NSObject{
+    rootNavigationController *rootNavController;
+    rootController *rootControllerSwitch;
+}
+
+@property (readonly) rootNavigationController *rootNavController;
+@property (readonly) rootController *rootControllerSwitch;
+
++ (id)get;
 @end

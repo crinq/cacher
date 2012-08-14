@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "root.h"
+#import "cache.h"
+#import "pos.h"
 
-@interface navViewController : UIViewController
+
+@interface navViewController : UIViewController{
+    UILabel *label;
+}
 
 - (void)updateView;
 @end

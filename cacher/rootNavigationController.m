@@ -46,7 +46,6 @@
 
 - (void)updateView
 {
-    NSLog(@"update view");
     [myNavView updateView];
     [myCacheNavController updateView];
 }

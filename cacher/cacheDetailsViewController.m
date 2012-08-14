@@ -25,10 +25,39 @@
     return self;
 }
 
+- (void)addCache
+{
+    cache *currentCache = [[[root get] rootControllerSwitch] getCacheByGCCode:[self title]];
+    [[[root get] rootControllerSwitch] setCurrentCache:currentCache];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    UILabel *myLabel = [[UILabel alloc] init];
+    [myLabel setNumberOfLines:0];
+    self.view = myLabel;
+    
+    NSMutableString* content = [[NSMutableString alloc] init];
+    pos *currentpos = [[[root get] rootControllerSwitch] currentPosition];
+    cache *cache = [[[root get] rootControllerSwitch] getCacheByGCCode:[self title]];
+    
+    [content appendFormat:@"GCCode: %@\n", [cache GCCode]];
+    [content appendFormat:@"GCName: %@\n", [cache GCName]];
+    if([[cache GCPos] distanceTo:currentpos] > 1000.0){
+        [content appendFormat:@"Distance: %fKm\n", [[cache GCPos] distanceTo:currentpos] / 1000];
+    }
+    else{
+        [content appendFormat:@"Distance: %fm\n", [[cache GCPos] distanceTo:currentpos]];
+    }
+    [content appendFormat:@"Direction: %f\n", [[cache GCPos] dirInDegTo:currentpos]];
+    [content appendFormat:@"GCInfo: %@\n", [cache GCInfo]];
+    
+    [myLabel setText:content];
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"GO" style:UIBarButtonSystemItemDone target:self action:@selector(addCache)];
+    self.navigationItem.rightBarButtonItem = rightButton;
 }
 
 - (void)viewDidUnload

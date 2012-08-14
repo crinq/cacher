@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "cacheDetailsViewController.h"
-#import "AppDelegate.h"
+#import "root.h"
+
+@class cacheDetailsViewController;
 
 @interface cachesTableViewController : UITableViewController{
     cacheDetailsViewController *cacheDetails;

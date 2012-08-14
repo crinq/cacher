@@ -13,9 +13,12 @@
 
 @interface cacheController : NSObject{
     NSMutableArray *caches;
+    cache *currentCache;
 }
 
 @property (readonly) NSMutableArray *caches;
+@property () cache *currentCache;
 
+- (cache*) getCacheByGCCode:(NSString*)GCCode;
 
 @end

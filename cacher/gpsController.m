@@ -17,8 +17,7 @@
 -(void) messageReceived:(NSString*) message
 {
     [self parse:message];
-    [[[AppDelegate sharedSingleton] rootNavController] updateView];
-    NSLog(@"msg");
+    [[[root get] rootNavController] updateView];
 }
 
 - (id)init{
@@ -54,7 +53,7 @@
 				}
                 
                 //save data
-                currentPos = [[pos alloc] initWithLongitudeInDeg:lat andLatitudeInDeg:lon];
+                currentPos = [[pos alloc] initWithLongitudeInDeg:lon andLatitudeInDeg:lat];
                 
                 //              s = [[tmp objectAtIndex:1] intValue] % 100;
                 //				m = ([[tmp objectAtIndex:1] intValue] % 10000 - s) / 100;

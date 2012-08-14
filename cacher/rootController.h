@@ -25,6 +25,7 @@
 - (NSUInteger)maxDistance;
 - (bool)sortArray;
 - (pos *)currentPosition;
-
-
+- (cache*) getCacheByGCCode:(NSString*)GCCode;
+- (cache*) currentCache;
+- (void) setCurrentCache:(cache*)cache;
 @end

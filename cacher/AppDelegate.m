@@ -10,16 +10,14 @@
 
 @implementation AppDelegate
 
-@synthesize rootControllerSwitch;
-@synthesize rootNavController;
 
 - (id)init
 {
     self = [super init];
     if (self) {
         // Custom initialization
-        rootControllerSwitch = [[rootController alloc] init];
-        rootNavController = [[rootNavigationController alloc] init];
+        //rootControllerSwitch = [[rootController alloc] init];
+        //rootNavController = [[rootNavigationController alloc] init];
     }
     return self;
 }
@@ -30,7 +28,7 @@
     [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
 
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = rootNavController;
+    self.window.rootViewController = [[root get] rootNavController];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -65,18 +63,6 @@
 {
     NSLog(@"applicationWillTerminate");
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-+ (id)sharedSingleton
-{
-    static AppDelegate *sharedSingleton;
-    
-    @synchronized(self)
-    {
-        if (!sharedSingleton)
-            sharedSingleton = [[AppDelegate alloc] init];
-        return sharedSingleton;
-    }
 }
 
 @end

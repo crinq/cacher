@@ -11,13 +11,15 @@
 @implementation cacheController
 
 @synthesize caches;
+@synthesize currentCache;
 
 -(id)init{
-    [caches addObject:[[cache alloc] initWithGCCode:@"GC2JZ38" name:@"cache0" withLongitude:51.9721 andLatitude:7.6225675]];
-    [caches addObject:[[cache alloc] initWithGCCode:@"GC2AJXH" name:@"Cache1" withLongitude:51.973233 andLatitude:7.633183]];
-    [caches addObject:[[cache alloc] initWithGCCode:@"GC30WTE" name:@"Cache2" withLongitude:51.974967 andLatitude:7.6178]];
-    [caches addObject:[[cache alloc] initWithGCCode:@"GC2ZA0D" name:@"Cache3" withLongitude:51.981667 andLatitude:7.628333]];
-    [caches addObject:[[cache alloc] initWithGCCode:@"GCTTTD" name:@"Cache4" withLongitude:51.981467 andLatitude:7.629617]];
+    caches = [[NSMutableArray alloc] init];
+    [caches addObject:[[cache alloc] initWithGCCode:@"GC2JZ38" name:@"cache0" withLongitude:8.435700 andLatitude:54.715600]];
+    [caches addObject:[[cache alloc] initWithGCCode:@"GC2AJXH" name:@"Cache1" withLongitude:8.500000 andLatitude:54.733333]];
+    [caches addObject:[[cache alloc] initWithGCCode:@"GC30WTE" name:@"Cache2" withLongitude:8.487500 andLatitude:54.689483]];
+
+    NSLog(@"cachcount: %d", [caches count]);
     return self;
 }
 - (cache*) getCacheByGCCode:(NSString*)GCCode{
@@ -39,8 +41,8 @@
 - (NSArray*) cachesSortedWithMaxDistance{
     NSMutableArray *filteredCaches = [[NSMutableArray alloc] init];
     
-    NSUInteger maxDistance = [[[AppDelegate sharedSingleton] rootControllerSwitch] maxDistance];
-    pos *currentPosition = [[[AppDelegate sharedSingleton] rootControllerSwitch] currentPosition];
+    NSUInteger maxDistance = [[[root get] rootControllerSwitch] maxDistance];
+    pos *currentPosition = [[[root get] rootControllerSwitch] currentPosition];
     
     //for(cache *c in caches){
     //    if([[c GCPos] distanceTo:currentPosition] <= maxDistance){
@@ -48,7 +50,7 @@
     //    }
     //}
     
-    if([[[AppDelegate sharedSingleton] rootControllerSwitch] sortArray]){
+    if([[[root get] rootControllerSwitch] sortArray]){
         //return [filteredCaches sortedArrayUsingFunction:sort context:(void*)currentPosition];
     }
     return filteredCaches;

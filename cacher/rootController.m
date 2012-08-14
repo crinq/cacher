@@ -36,5 +36,16 @@
     return [myGpsController currentPos];
 }
 
+- (cache*) getCacheByGCCode:(NSString*)GCCode{
+    return [myCacheController getCacheByGCCode:GCCode];
+}
+
+- (void) setCurrentCache:(cache*)cache{
+    [myCacheController setCurrentCache:cache];
+}
+
+- (cache*) currentCache{
+    return [myCacheController currentCache];
+}
 
 @end

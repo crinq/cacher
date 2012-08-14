@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "pos.h"
+#import "cache.h"
+#import "root.h"
 
-@interface cacheDetailsViewController : UIViewController
+@interface cacheDetailsViewController : UIViewController{
+}
 
 - (id)initWithGCCode:(NSString *)GCCode;
 - (void)updateView;

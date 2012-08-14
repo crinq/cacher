@@ -10,14 +10,28 @@
 
 @implementation root
 
-+ (id)sharedSingleton
+@synthesize rootControllerSwitch;
+@synthesize rootNavController;
+
+
+-(id)init{
+    self = [super init];
+    if (self) {
+        // Custom initialization
+        rootControllerSwitch = [[rootController alloc] init];
+        rootNavController = [[rootNavigationController alloc] init];
+    }
+    return self;
+}
+
++ (id)get
 {
-    static AppDelegate *sharedSingleton;
+    static root *sharedSingleton;
     
     @synchronized(self)
     {
         if (!sharedSingleton)
-            sharedSingleton = [[AppDelegate alloc] init];
+            sharedSingleton = [[root alloc] init];
         return sharedSingleton;
     }
 }
