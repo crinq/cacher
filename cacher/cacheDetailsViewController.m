@@ -46,12 +46,12 @@
     [content appendFormat:@"GCCode: %@\n", [cache GCCode]];
     [content appendFormat:@"GCName: %@\n", [cache GCName]];
     if([[cache GCPos] distanceTo:currentpos] > 1000.0){
-        [content appendFormat:@"Distance: %fKm\n", [[cache GCPos] distanceTo:currentpos] / 1000];
+        [content appendFormat:@"Distance: %fKm\n", [currentpos distanceTo:[cache GCPos]] / 1000.0];
     }
     else{
-        [content appendFormat:@"Distance: %fm\n", [[cache GCPos] distanceTo:currentpos]];
+        [content appendFormat:@"Distance: %fm\n", [currentpos distanceTo:[cache GCPos]]];
     }
-    [content appendFormat:@"Direction: %f\n", [[cache GCPos] dirInDegTo:currentpos]];
+    [content appendFormat:@"Direction: %f\n", [currentpos dirInDegTo:[cache GCPos]]];
     [content appendFormat:@"GCInfo: %@\n", [cache GCInfo]];
     
     [myLabel setText:content];

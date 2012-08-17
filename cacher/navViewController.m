@@ -55,16 +55,17 @@
     [content appendFormat:@"GCName: %@\n", [cache GCName]];
     [content appendFormat:@"GCPos: %f\t%f\n", [[cache GCPos] latInDeg], [[cache GCPos] lonInDeg]];
     [content appendFormat:@"myPos: %f\t%f\n", [currentpos latInDeg], [currentpos lonInDeg]];
+    NSLog(@"dist: %f", [currentpos distanceTo:[cache GCPos]]);
     
-    if([[cache GCPos] distanceTo:currentpos] > 1000.0){
-        [content appendFormat:@"Distance: %fKm\n", [[cache GCPos] distanceTo:currentpos] / 1000];
+    if([currentpos distanceTo:[cache GCPos]] > 1000.0){
+        [content appendFormat:@"Distance: %fKm\n", [currentpos distanceTo:[cache GCPos]] / 1000.0];
     }
     else{
-        [content appendFormat:@"Distance: %fm\n", [[cache GCPos] distanceTo:currentpos]];
+        [content appendFormat:@"Distance: %fm\n", [currentpos distanceTo:[cache GCPos]]];
     }
     
     //[content appendFormat:@"Distance: %f\n", [[cache GCPos] distanceTo:currentpos]];
-    [content appendFormat:@"Direction: %f\n", [[cache GCPos] dirInDegTo:currentpos]];
+    [content appendFormat:@"Direction: %f\n", [currentpos dirInDegTo:[cache GCPos]]];
     [content appendFormat:@"GCInfo: %@\n", [cache GCInfo]];
     
     [label setText:content];

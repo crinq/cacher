@@ -27,6 +27,7 @@
 		87A49D3B15D87D3400EB8006 /* rootController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A49D3A15D87D3400EB8006 /* rootController.m */; };
 		87A49D3F15D8846000EB8006 /* configController.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A49D3E15D8846000EB8006 /* configController.m */; };
 		87A49D4215D89C1100EB8006 /* root.m in Sources */ = {isa = PBXBuildFile; fileRef = 87A49D4115D89C1100EB8006 /* root.m */; };
+		87A49D4715DC06A400EB8006 /* GPX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87A49D4615DC06A400EB8006 /* GPX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,7 @@
 		87A49D3E15D8846000EB8006 /* configController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = configController.m; sourceTree = "<group>"; };
 		87A49D4015D89C1000EB8006 /* root.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = root.h; sourceTree = "<group>"; };
 		87A49D4115D89C1100EB8006 /* root.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = root.m; sourceTree = "<group>"; };
+		87A49D4615DC06A400EB8006 /* GPX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GPX.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				8769B72415D58C7D0039E2A0 /* UIKit.framework in Frameworks */,
 				8769B72615D58C7D0039E2A0 /* Foundation.framework in Frameworks */,
 				8769B72815D58C7D0039E2A0 /* CoreGraphics.framework in Frameworks */,
+				87A49D4715DC06A400EB8006 /* GPX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +108,7 @@
 		8769B72215D58C7D0039E2A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				87A49D4615DC06A400EB8006 /* GPX.framework */,
 				8769B72315D58C7D0039E2A0 /* UIKit.framework */,
 				8769B72515D58C7D0039E2A0 /* Foundation.framework */,
 				8769B72715D58C7D0039E2A0 /* CoreGraphics.framework */,
@@ -348,6 +352,10 @@
 		8769B73815D58C7D0039E2A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cacher/cacher-Prefix.pch";
 				INFOPLIST_FILE = "cacher/cacher-Info.plist";
@@ -360,6 +368,10 @@
 		8769B73915D58C7D0039E2A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "cacher/cacher-Prefix.pch";
 				INFOPLIST_FILE = "cacher/cacher-Info.plist";

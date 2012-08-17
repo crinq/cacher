@@ -81,10 +81,10 @@
     cell.textLabel.text = [[[[[root get] rootControllerSwitch] caches] objectAtIndex:indexPath.row] GCCode];
     
     if([cachepos distanceTo:currentpos] > 1000.0){
-        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fKm", [cachepos distanceTo:currentpos] / 1000];
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fKm", [currentpos distanceTo:cachepos] / 1000.0];
     }
     else{
-        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fm", [cachepos distanceTo:currentpos]];
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fm", [currentpos distanceTo:cachepos]];
     }
     
     return cell;

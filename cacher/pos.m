@@ -47,14 +47,22 @@
 }
 
 - (double)distanceTo:(pos *)pos{
-    double dlon = dist * cos(lat) * (pos.lon - lon);
-    double dlat = dist * (pos.lat - lat);
+    double dlon = dist * cos(lat) * (pos.lon - lon) / pi * 180.0;
+    double dlat = dist * (pos.lat - lat) / pi * 180.0;
+/*    NSLog(@"dist: %f", dist);
+    NSLog(@"lat: %f", lat);
+    NSLog(@"lon: %f", lon);
+    NSLog(@"pos.lon: %f", pos.lon);
+ */   
+    NSLog(@"dlon: %fm", dlon);
+    NSLog(@"dlat: %fm", dlat);
+    
     return(sqrt(dlon * dlon + dlat * dlat));
 }
 
 - (double)dirTo:(pos *)pos{
-    double dlon = dist * cos(lat) * (lon - pos.lon);
-    double dlat = dist * (lat - pos.lat);
+    double dlon = dist * cos(lat) * (lon - pos.lon) / pi * 180.0;
+    double dlat = dist * (lat - pos.lat) / pi * 180.0;
     
     if((dlon == 0.0 || dlon == -0.0) && (dlat == 0.0 || dlat == -0.0)){
         return 0.0;
