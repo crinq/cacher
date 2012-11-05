@@ -9,13 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "navViewController.h"
 #import "cachesNavController.h"
+#import "configViewController.h"
 
 @class navViewController;
 @class cachesNavController;
+@class configViewController;
 
 @interface rootNavigationController : UITabBarController{
     navViewController *myNavView;
     cachesNavController *myCacheNavController;
+    configViewController *myConfigViwController;
+    
 }
 
 - (void)updateView;

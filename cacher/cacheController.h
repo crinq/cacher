@@ -20,5 +20,6 @@
 @property () cache *currentCache;
 
 - (cache*) getCacheByGCCode:(NSString*)GCCode;
+- (NSMutableArray*) cachesSorted;
 
 @end

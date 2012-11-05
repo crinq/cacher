@@ -19,6 +19,7 @@ typedef enum {
 @property (nonatomic, retain) NSString *messageValue; 
 
 -(void) activate;
+-(void) deactivate;
 -(void) handlePacket_Data:(uint8_t *)packet:(uint16_t) size;
 
 // listeners

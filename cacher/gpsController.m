@@ -17,17 +17,24 @@
 -(void) messageReceived:(NSString*) message
 {
     [self parse:message];
-    [[[root get] rootNavController] updateView];
 }
 
 - (id)init{
-    BluetoothService* bt = [BluetoothService sharedInstance];
+    bt = [BluetoothService sharedInstance];
 	[bt addListener:self];
-    [bt activate];
-
-    currentPos = [[pos alloc] initWithLongitudeInDeg:7.622567 andLatitudeInDeg:51.97215];
+//50.263483" lon="8.664883
+    currentPos = [[pos alloc] initWithLongitudeInDeg:8.664883 andLatitudeInDeg:50.263483];
     return self;;
 }
+
+-(void)connect{
+    [bt activate];
+}
+
+-(void)disconnect{
+    [bt deactivate];
+}
+
 
 - (void)parse:(NSString*)data{
     NSArray *tmp = [data componentsSeparatedByString:@","];
@@ -63,7 +70,7 @@
                 //data not valid
                 isValid = FALSE;
             }
-            //[[mvc view] updateView];
+            [[[root get] rootNavController] updateView];
         }
     }
 }

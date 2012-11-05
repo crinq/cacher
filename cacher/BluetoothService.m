@@ -1,9 +1,9 @@
 #import "BluetoothService.h"
 
-#import <btstack/btstack.h>
-#import <btstack/hci_cmds.h>
-#import <btstack/run_loop.h>
-#import <btstack/utils.h>
+#import "/Users/crinq/Documents/sandbox/ipod/btstack/trunk/include/btstack/btstack.h"
+#import "/Users/crinq/Documents/sandbox/ipod/btstack/trunk/include/btstack/hci_cmds.h"
+#import "/Users/crinq/Documents/sandbox/ipod/btstack/trunk/include/btstack/run_loop.h"
+#import "/Users/crinq/Documents/sandbox/ipod/btstack/trunk/include/btstack/utils.h"
 
 static BluetoothService * m_BluetoothService = nil;
 //00:11:a5:30:2c:5a
@@ -50,9 +50,18 @@ static void packet_handler(uint8_t packet_type, uint16_t channel, uint8_t *packe
 
 -(void) activate
 {
+    NSLog(@"activate");
 	bt_open();
 	//TODO fehler abfangen
 	bt_send_cmd(&btstack_set_power_mode, HCI_POWER_ON);
+}
+
+-(void) deactivate
+{
+    NSLog(@"deactivate");
+	//TODO fehler abfangen
+	bt_send_cmd(&btstack_set_power_mode, HCI_POWER_OFF);
+    bt_open();
 }
 
 -(void) addListener:(id<BluetoothServiceListener>)listener

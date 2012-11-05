@@ -34,6 +34,14 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"sort" style:UIBarButtonSystemItemDone target:self action:@selector(sort)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+}
+
+- (void)sort{
+    sorted = YES;
+    [self updateView];
 }
 
 - (void)viewDidUnload
@@ -62,7 +70,7 @@
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     //return [[[[AppDelegate sharedSingleton] rootControllerSwitch] caches] count];
-    return [[[[root get] rootControllerSwitch] caches] count];
+    return [[[[root get] rootControllerSwitch] cachesSorted] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -75,17 +83,27 @@
     // Configure the cell...
     //cell.textLabel.text = @"test";
     //cell.detailTextLabel.text = @"test detail";
+    NSArray *caches;
+    
+    //if(sorted){
+        caches = [[[root get] rootControllerSwitch] cachesSorted];
+    //}
+    //else{
+        //caches = [[[root get] rootControllerSwitch] caches];
+    //}
+        
     pos *currentpos = [[[root get] rootControllerSwitch] currentPosition];
-    pos *cachepos = [[[[[root get] rootControllerSwitch] caches] objectAtIndex:indexPath.row] GCPos];
+    cache * currentCache = [caches objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [[[[[root get] rootControllerSwitch] caches] objectAtIndex:indexPath.row] GCCode];
+    cell.textLabel.text = [currentCache GCName];
     
-    if([cachepos distanceTo:currentpos] > 1000.0){
-        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fKm", [currentpos distanceTo:cachepos] / 1000.0];
+    if([currentpos distanceTo:[currentCache GCPos]] > 1000.0){
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%.2fKm %.1f/%.1f %@ %@", [currentpos distanceTo:[currentCache GCPos]] / 1000.0, [currentCache D], [currentCache T], [currentCache GCSize], [currentCache GCType]];
     }
     else{
-        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%fm", [currentpos distanceTo:cachepos]];
+        cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%.0fm %.1f/%.1f %@ %@", [currentpos distanceTo:[currentCache GCPos]], [currentCache D], [currentCache T], [currentCache GCSize], [currentCache GCType]];
     }
+//    cell.detailTextLabel.text = [[NSString alloc] initWithFormat:@"%.1fm %.1f/%.1f %@ %@", [currentpos distanceTo:[currentCache GCPos]], [currentCache D], [currentCache T], [currentCache GCSize], [currentCache GCType]];
     
     return cell;
 }
@@ -141,14 +159,16 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     
-    cacheDetails = [[cacheDetailsViewController alloc] initWithGCCode:[[[[[root get] rootControllerSwitch] caches] objectAtIndex:indexPath.row] GCCode]];
+    cacheDetails = [[cacheDetailsViewController alloc] initWithGCCode:[[[[[root get] rootControllerSwitch] cachesSorted] objectAtIndex:indexPath.row] GCCode]];
     [[self navigationController] pushViewController:cacheDetails animated:YES];
 }
 
 - (void)updateView
 {
-    [self.tableView reloadData];
-    [cacheDetails updateView];
+    if([self isViewLoaded] && self.view.window){
+        [self.tableView reloadData];
+        [cacheDetails updateView];
+    }
 }
 
 @end

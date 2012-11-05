@@ -21,8 +21,10 @@
         // Custom initialization
         myNavView = [[navViewController alloc] init];
         myCacheNavController = [[cachesNavController alloc] init];
+        myConfigViwController = [[configViewController alloc] init];
         [self addChildViewController:myCacheNavController];
         [self addChildViewController:myNavView];
+        [self addChildViewController:myConfigViwController];
     }
     return self;
 }
@@ -48,6 +50,7 @@
 {
     [myNavView updateView];
     [myCacheNavController updateView];
+    [myConfigViwController updateView];
 }
 
 @end

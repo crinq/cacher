@@ -17,6 +17,7 @@
     myCacheController = [[cacheController alloc] init];
     myGpsController = [[gpsController alloc] init];
     myConfigController = [[configController alloc] init];
+    myGPXController = [[gpxController alloc] init];
     return self;
 }
 
@@ -24,7 +25,20 @@
     return [myCacheController caches];
 }
 
-- (NSUInteger)maxDistance{
+- (NSMutableArray *)cachesSorted{
+    return [myCacheController cachesSorted];
+}
+
+- (void)addCache:(cache*)c{
+    [[myCacheController caches] addObject:c];
+    [[[root get] rootNavController] updateView];
+}
+
+- (void)setMaxDistance:(NSUInteger)dist{
+    [myConfigController setMaxDistance:dist];
+}
+
+- (double)maxDistance{
     return [myConfigController maxDistance];
 }
 
@@ -34,6 +48,14 @@
 
 - (pos *)currentPosition{
     return [myGpsController currentPos];
+}
+
+-(void)connect{
+    [myGpsController connect];
+}
+
+-(void)disconnect{
+    [myGpsController disconnect];
 }
 
 - (cache*) getCacheByGCCode:(NSString*)GCCode{

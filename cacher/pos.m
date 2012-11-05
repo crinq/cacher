@@ -54,8 +54,6 @@
     NSLog(@"lon: %f", lon);
     NSLog(@"pos.lon: %f", pos.lon);
  */   
-    NSLog(@"dlon: %fm", dlon);
-    NSLog(@"dlat: %fm", dlat);
     
     return(sqrt(dlon * dlon + dlat * dlat));
 }

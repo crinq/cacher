@@ -14,6 +14,7 @@
 
 @interface cachesTableViewController : UITableViewController{
     cacheDetailsViewController *cacheDetails;
+    bool sorted;
 }
 
 - (void)updateView;

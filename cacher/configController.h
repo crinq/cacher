@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface configController : NSObject{
-    NSUInteger maxDistance;
+    double maxDistance;
     bool sortArray;
 }
 
-@property (readonly) NSUInteger maxDistance;
+@property () double maxDistance;
 @property (readonly) bool sortArray;
 
 @end

@@ -14,11 +14,13 @@
 @interface gpsController : NSObject<BluetoothServiceListener>{
     bool isValid;
     pos *currentPos;
+    BluetoothService* bt;
 }
 
 @property (readonly) bool isValid;
 @property (readonly) pos *currentPos;
 
 -(void) messageReceived:(NSString*) message;
-    
+-(void)connect;
+-(void)disconnect;
 @end

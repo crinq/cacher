@@ -13,7 +13,7 @@
 @synthesize maxDistance;
 
 -(id)init{
-    maxDistance = 1;
+    maxDistance = 400;
     sortArray = YES;
     return self;
 }
